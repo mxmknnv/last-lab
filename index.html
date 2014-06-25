@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Last-Lab</title>
+	<script src="js/script.js"></script>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+	<div id="page-align">
+		<div id="header">
+			<h3>Last-Lab</h3> 
+			<h4>Игра "Подбрасывание монеты".</h4>
+		</div>
+		<div id="content">
+			<div id="main-menu" class="border">
+                <p>Выберите роль:</p>
+                <button onclick="set('a');">A</button>
+                <button onclick="set('b');">B</button>    
+			</div>
+            <div id="role">
+                <div id="role-a" class="hide border">
+                    <p>Выбрана роль А</p> 
+                    <button onclick="res('a');">Выйти</button>
+                    <br> 
+                    <span id="role-a-status">Поиск игроков...</span>
+                    <div id="game-a" class="hide">
+                        <span id="game-a-message">Ожидание хода оппонента...</span>
+                        <div id="move-a" class="hide">
+                            <span>Сделайте выбор:</span>
+                            <br>
+                            <button onclick="moveA('o');">Орел</button>
+                            <button onclick="moveA('r');">Решка</button>             
+                        </div>
+                        <div id="wait-a" class="hide">
+                            <span id="choice-a"></span>
+                            <br>
+                            <span id="winner-a"></span>    
+                        </div> 
+                    </div>      
+                </div>
+                <div id="role-b" class="hide border">
+                    <p>Выбрана роль B</p> 
+                    <button onclick="res('b');">Выйти</button>
+                    <br>
+                    <span id="role-b-status">Поиск игроков...</span> 
+                    <div id="game-b" class="hide">
+                        <div id="move-b">
+                            <span>Сделайте выбор:</span>
+                            <br>
+                            <button onclick="moveB('o');">Орел</button>
+                            <button onclick="moveB('r');">Решка</button>    
+                        </div>
+                        <div id="wait-b" class="hide">
+                            <span id="choice-b"></span>
+                            <br>
+                            <span id="winner-b">Ожидание хода оппонента...</span>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+		</div>
+	</div>
+	<div id="admin-panel">
+        <h4>Админ. панель:</h4>
+        <button onclick="allReset();">Сброс</button>    		    
+    </div>
+    <div id="help-panel">
+        <h4>Описание игры:</h4>
+        <a href="#">GitHub</a>    		    
+    </div>
+</body>
+</html>
